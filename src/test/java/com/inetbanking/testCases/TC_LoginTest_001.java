@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class TC_LoginTest_001 extends BaseClass {
     @Test
     public void loginTest(){
-        driver.get(baseUrl);
+
         logger.info("URL is opened");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.setUserName(username);

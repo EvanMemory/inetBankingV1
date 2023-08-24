@@ -46,8 +46,8 @@ public class ReadConfig {
         return firefoxpath;
     }
 
-    public String getIepath(){
-        String iepath = pro.getProperty("iepath");
-        return iepath;
+    public String getEdgepath(){
+        String edgepath = pro.getProperty("edgepath");
+        return edgepath;
     }
 }

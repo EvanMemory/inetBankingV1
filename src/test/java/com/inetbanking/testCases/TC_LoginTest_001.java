@@ -1,12 +1,15 @@
 package com.inetbanking.testCases;
 
 import com.inetbanking.pageObjects.LoginPage;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class TC_LoginTest_001 extends BaseClass {
     @Test
-    public void loginTest(){
+    public void loginTest() throws IOException {
 
         logger.info("URL is opened");
         LoginPage loginPage = new LoginPage(driver);
@@ -16,12 +19,13 @@ public class TC_LoginTest_001 extends BaseClass {
         logger.info("Entered password");
         loginPage.clickSubmit();
 
-        if(driver.getTitle().equals("Guru99 Bank Manager HomePage")){
+        if(driver.getTitle().equals("Guru99 Bank Manager HomePage123")){
             Assert.assertTrue(true);
             logger.info("Login test passed");
         } else
         {
-            Assert.assertTrue(false);
+            captureScreen(driver, "loginTest");
+            Assert.fail();
             logger.info("Login test failed");
         }
     }
